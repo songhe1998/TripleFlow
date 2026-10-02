@@ -87,6 +87,6 @@ function renderCollection(kind, label, subtitle, ids) {
   select(ids[0]);
 }
 renderCollection('wild','Captured Videos','', ['wild_mirror_hard','wild_kitchen','wild_motion','wild_chair','wild_red_chair','wild_mirror_easy']);
-renderCollection('generated','Generated Videos','', ['me12_kayak_canal','me07_cactus_steps','me17_cone_stone','me06_suitcase_lobby','me11_sculpture_gallery','me01_bicycle_plaza','p09_gallery']);
+renderCollection('generated','Generated Videos','', ['me17_cone_stone','me12_kayak_canal','me07_cactus_steps','me06_suitcase_lobby','me11_sculpture_gallery','me01_bicycle_plaza','p09_gallery']);
 renderSelector('comparison-tabs','comparison-demo',['t02_bookcase','t06_forklift_shelves','t01_carved_door','t09_mirror_entryway'],true);
 document.getElementById('copy-citation').addEventListener('click',async()=>{const text=document.getElementById('bibtex').textContent,status=document.getElementById('copy-status');try{await navigator.clipboard.writeText(text);status.textContent='BibTeX copied.';}catch{const selection=window.getSelection(),range=document.createRange();range.selectNodeContents(document.getElementById('bibtex'));selection.removeAllRanges();selection.addRange(range);status.textContent='Citation selected. Press Ctrl+C or ⌘C to copy.';}});

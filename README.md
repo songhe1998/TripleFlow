@@ -31,7 +31,7 @@ Publish the repository's `main` branch at its root using GitHub Pages. `.nojekyl
 
 ## Video provenance
 
-The page uses selected qualitative examples from the paper's supplementary materials: nine showcase cases and four comparison cases, with 42 MP4 files in total. Source and edited clips retain the original frame order and matched playback rate; the page does not crop or retime a method to improve its apparent result. These selected examples are not an unbiased aggregate evaluation.
+The page uses selected qualitative examples from the wild-video experiments, the six previously selected Wan motion/effects scenes, and the art-gallery case: thirteen showcase cases and four comparison cases, with 50 MP4 files in total. Source and edited clips retain the original frame order and matched playback rate; the page does not crop or retime a method to improve its apparent result. These selected examples are not an unbiased aggregate evaluation.
 
 For the comparison gallery, ContextFlow uses the stored Wan 5B adaptation with independently generated MagicQuill first frames, and OmniEraser uses the stored 512-resolution framewise results. These settings are also disclosed on the page. The paper contains the full benchmark protocols.
 

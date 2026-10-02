@@ -51,8 +51,8 @@ function renderSelector(tabsId,demoId,ids,comparison=false){
   ids.forEach((id,i)=>{const b=document.createElement('button');b.type='button';b.dataset.id=id;b.textContent=CASES[id].name;b.setAttribute('aria-pressed',String(i===0));b.addEventListener('click',()=>select(id,!reduceMotion));tabs.append(b);});
   select(ids[0],!comparison&&!reduceMotion);
 }
-renderSelector('hero-tabs','hero-demo',['me12_kayak_canal','p09_gallery','wild_mirror_hard','p04_courtyard_bicycle']);
-const galleryIds=['p09_gallery','p17_scooter','wild_mirror_hard','egret_2_1','wild_kitchen','p18_farm_horse','me07_cactus_steps','p04_courtyard_bicycle'];
+renderSelector('hero-tabs','hero-demo',['me12_kayak_canal','wild_mirror_hard','wild_kitchen','me07_cactus_steps']);
+const galleryIds=["wild_mirror_hard", "wild_kitchen", "wild_motion", "wild_chair", "wild_red_chair", "wild_mirror_easy", "me07_cactus_steps", "me17_cone_stone", "me06_suitcase_lobby", "me11_sculpture_gallery", "me01_bicycle_plaza", "p09_gallery"];
 document.getElementById('gallery').innerHTML=galleryIds.map(id=>{const c=CASES[id];return `<article class="result-card ${c.videos[0].height>c.videos[0].width?'portrait':''}"><div class="card-heading"><h3>${escapeHTML(c.name)}</h3><p>${escapeHTML(c.detail)}</p></div>${playerHTML(c)}<p class="instruction">${escapeHTML(c.title)}</p></article>`;}).join('');
 document.querySelectorAll('#gallery .player').forEach(root=>new SyncedPlayer(root));
 renderSelector('comparison-tabs','comparison-demo',['t02_bookcase','t06_forklift_shelves','t01_carved_door','t09_mirror_entryway'],true);

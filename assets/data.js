@@ -28,39 +28,10 @@ const CASES = {
       }
     ]
   },
-  "egret_2_1": {
-    "id": "egret_2_1",
-    "name": "Wetland",
-    "detail": "Object-associated reflections",
-    "title": "Remove the egret from the wetland.",
-    "group": "showcase",
-    "videos": [
-      {
-        "method": "source",
-        "label": "Input",
-        "file": "videos/showcase/02_egret_2_1/input.mp4",
-        "poster": "videos/showcase/02_egret_2_1/input.jpg",
-        "frames": 48,
-        "fps": 24.0,
-        "width": 848,
-        "height": 480
-      },
-      {
-        "method": "n7",
-        "label": "TripleFlow",
-        "file": "videos/showcase/02_egret_2_1/tripleflow.mp4",
-        "poster": "videos/showcase/02_egret_2_1/tripleflow.jpg",
-        "frames": 48,
-        "fps": 24.0,
-        "width": 848,
-        "height": 480
-      }
-    ]
-  },
   "wild_mirror_hard": {
     "id": "wild_mirror_hard",
     "name": "Mirror",
-    "detail": "Captured video · reflections",
+    "detail": "Captured video \u00b7 reflections",
     "title": "Remove the shoes in front of the mirror.",
     "group": "showcase",
     "videos": [
@@ -89,7 +60,7 @@ const CASES = {
   "wild_kitchen": {
     "id": "wild_kitchen",
     "name": "Kitchen",
-    "detail": "Captured video · occlusion",
+    "detail": "Captured video \u00b7 occlusion",
     "title": "Remove the coffee machine from the kitchen counter.",
     "group": "showcase",
     "videos": [
@@ -115,64 +86,6 @@ const CASES = {
       }
     ]
   },
-  "p04_courtyard_bicycle": {
-    "id": "p04_courtyard_bicycle",
-    "name": "Courtyard",
-    "detail": "Changing viewpoints",
-    "title": "Remove the cyclist and bicycle from the courtyard.",
-    "group": "showcase",
-    "videos": [
-      {
-        "method": "source",
-        "label": "Input",
-        "file": "videos/showcase/05_p04_courtyard_bicycle/input.mp4",
-        "poster": "videos/showcase/05_p04_courtyard_bicycle/input.jpg",
-        "frames": 121,
-        "fps": 24.0,
-        "width": 1248,
-        "height": 704
-      },
-      {
-        "method": "n7",
-        "label": "TripleFlow",
-        "file": "videos/showcase/05_p04_courtyard_bicycle/tripleflow.mp4",
-        "poster": "videos/showcase/05_p04_courtyard_bicycle/tripleflow.jpg",
-        "frames": 121,
-        "fps": 24.0,
-        "width": 1248,
-        "height": 704
-      }
-    ]
-  },
-  "p17_scooter": {
-    "id": "p17_scooter",
-    "name": "Street",
-    "detail": "Camera motion",
-    "title": "Remove the rider and scooter from the street.",
-    "group": "showcase",
-    "videos": [
-      {
-        "method": "source",
-        "label": "Input",
-        "file": "videos/showcase/06_p17_scooter/input.mp4",
-        "poster": "videos/showcase/06_p17_scooter/input.jpg",
-        "frames": 121,
-        "fps": 24.0,
-        "width": 1248,
-        "height": 704
-      },
-      {
-        "method": "n7",
-        "label": "TripleFlow",
-        "file": "videos/showcase/06_p17_scooter/tripleflow.mp4",
-        "poster": "videos/showcase/06_p17_scooter/tripleflow.jpg",
-        "frames": 121,
-        "fps": 24.0,
-        "width": 1248,
-        "height": 704
-      }
-    ]
-  },
   "p09_gallery": {
     "id": "p09_gallery",
     "name": "Art gallery",
@@ -195,35 +108,6 @@ const CASES = {
         "label": "TripleFlow",
         "file": "videos/showcase/07_p09_gallery/tripleflow.mp4",
         "poster": "videos/showcase/07_p09_gallery/tripleflow.jpg",
-        "frames": 121,
-        "fps": 24.0,
-        "width": 1248,
-        "height": 704
-      }
-    ]
-  },
-  "p18_farm_horse": {
-    "id": "p18_farm_horse",
-    "name": "Farmyard",
-    "detail": "Fine background structure",
-    "title": "Remove the horse from the farmyard.",
-    "group": "showcase",
-    "videos": [
-      {
-        "method": "source",
-        "label": "Input",
-        "file": "videos/showcase/09_p18_farm_horse/input.mp4",
-        "poster": "videos/showcase/09_p18_farm_horse/input.jpg",
-        "frames": 121,
-        "fps": 24.0,
-        "width": 1248,
-        "height": 704
-      },
-      {
-        "method": "n7",
-        "label": "TripleFlow",
-        "file": "videos/showcase/09_p18_farm_horse/tripleflow.mp4",
-        "poster": "videos/showcase/09_p18_farm_horse/tripleflow.jpg",
         "frames": 121,
         "fps": 24.0,
         "width": 1248,
@@ -533,6 +417,238 @@ const CASES = {
         "fps": 16.0,
         "width": 832,
         "height": 480
+      }
+    ]
+  },
+  "wild_mirror_easy": {
+    "id": "wild_mirror_easy",
+    "name": "Mirror \u00b7 easy",
+    "detail": "Captured video \u00b7 reflections",
+    "title": "Remove the shoes in front of the mirror (easy case).",
+    "group": "showcase",
+    "videos": [
+      {
+        "method": "source",
+        "label": "Input",
+        "file": "videos/showcase/15_wild_mirror_easy/input.mp4",
+        "poster": "videos/showcase/15_wild_mirror_easy/input.jpg",
+        "frames": 83,
+        "fps": 30.0,
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "method": "n7",
+        "label": "TripleFlow",
+        "file": "videos/showcase/15_wild_mirror_easy/tripleflow.mp4",
+        "poster": "videos/showcase/15_wild_mirror_easy/tripleflow.jpg",
+        "frames": 83,
+        "fps": 30.0,
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  },
+  "wild_motion": {
+    "id": "wild_motion",
+    "name": "Wild \u00b7 moving camera",
+    "detail": "Captured video \u00b7 camera motion",
+    "title": "Remove the green chair from the office.",
+    "group": "showcase",
+    "videos": [
+      {
+        "method": "source",
+        "label": "Input",
+        "file": "videos/showcase/19_wild_motion/input.mp4",
+        "poster": "videos/showcase/19_wild_motion/input.jpg",
+        "frames": 57,
+        "fps": 29.482758620689655,
+        "width": 404,
+        "height": 720
+      },
+      {
+        "method": "n7",
+        "label": "TripleFlow",
+        "file": "videos/showcase/19_wild_motion/tripleflow.mp4",
+        "poster": "videos/showcase/19_wild_motion/tripleflow.jpg",
+        "frames": 57,
+        "fps": 29.482758620689655,
+        "width": 404,
+        "height": 720
+      }
+    ]
+  },
+  "me17_cone_stone": {
+    "id": "me17_cone_stone",
+    "name": "Stone pavement",
+    "detail": "Camera motion & shadows",
+    "title": "Remove the traffic cone from the stone pavement.",
+    "group": "showcase",
+    "videos": [
+      {
+        "method": "source",
+        "label": "Input",
+        "file": "videos/showcase/17_me17_cone_stone/input.mp4",
+        "poster": "videos/showcase/17_me17_cone_stone/input.jpg",
+        "frames": 121,
+        "fps": 24.0,
+        "width": 832,
+        "height": 480
+      },
+      {
+        "method": "n7",
+        "label": "TripleFlow",
+        "file": "videos/showcase/17_me17_cone_stone/tripleflow.mp4",
+        "poster": "videos/showcase/17_me17_cone_stone/tripleflow.jpg",
+        "frames": 121,
+        "fps": 24.0,
+        "width": 832,
+        "height": 480
+      }
+    ]
+  },
+  "me01_bicycle_plaza": {
+    "id": "me01_bicycle_plaza",
+    "name": "Plaza",
+    "detail": "Camera motion & shadows",
+    "title": "Remove the bicycle from the plaza.",
+    "group": "showcase",
+    "videos": [
+      {
+        "method": "source",
+        "label": "Input",
+        "file": "videos/showcase/20_me01_bicycle_plaza/input.mp4",
+        "poster": "videos/showcase/20_me01_bicycle_plaza/input.jpg",
+        "frames": 121,
+        "fps": 24.0,
+        "width": 832,
+        "height": 480
+      },
+      {
+        "method": "n7",
+        "label": "TripleFlow",
+        "file": "videos/showcase/20_me01_bicycle_plaza/tripleflow.mp4",
+        "poster": "videos/showcase/20_me01_bicycle_plaza/tripleflow.jpg",
+        "frames": 121,
+        "fps": 24.0,
+        "width": 832,
+        "height": 480
+      }
+    ]
+  },
+  "me06_suitcase_lobby": {
+    "id": "me06_suitcase_lobby",
+    "name": "Lobby",
+    "detail": "Camera motion & reflections",
+    "title": "Remove the suitcase from the lobby.",
+    "group": "showcase",
+    "videos": [
+      {
+        "method": "source",
+        "label": "Input",
+        "file": "videos/showcase/me06_suitcase_lobby/input.mp4",
+        "poster": "videos/showcase/me06_suitcase_lobby/input.jpg",
+        "frames": 121,
+        "fps": 24.0,
+        "width": 1248,
+        "height": 720
+      },
+      {
+        "method": "n7",
+        "label": "TripleFlow",
+        "file": "videos/showcase/me06_suitcase_lobby/tripleflow.mp4",
+        "poster": "videos/showcase/me06_suitcase_lobby/tripleflow.jpg",
+        "frames": 121,
+        "fps": 24.0,
+        "width": 1248,
+        "height": 720
+      }
+    ]
+  },
+  "me11_sculpture_gallery": {
+    "id": "me11_sculpture_gallery",
+    "name": "Sculpture gallery",
+    "detail": "Camera motion & reflections",
+    "title": "Remove the sculpture from the gallery.",
+    "group": "showcase",
+    "videos": [
+      {
+        "method": "source",
+        "label": "Input",
+        "file": "videos/showcase/me11_sculpture_gallery/input.mp4",
+        "poster": "videos/showcase/me11_sculpture_gallery/input.jpg",
+        "frames": 121,
+        "fps": 24.0,
+        "width": 1248,
+        "height": 720
+      },
+      {
+        "method": "n7",
+        "label": "TripleFlow",
+        "file": "videos/showcase/me11_sculpture_gallery/tripleflow.mp4",
+        "poster": "videos/showcase/me11_sculpture_gallery/tripleflow.jpg",
+        "frames": 121,
+        "fps": 24.0,
+        "width": 1248,
+        "height": 720
+      }
+    ]
+  },
+  "wild_chair": {
+    "id": "wild_chair",
+    "name": "Wild \u00b7 green chair",
+    "detail": "Captured video \u00b7 rotating chair",
+    "title": "Remove the green chair.",
+    "group": "showcase",
+    "videos": [
+      {
+        "method": "source",
+        "label": "Input",
+        "file": "videos/showcase/wild_chair/input.mp4",
+        "poster": "videos/showcase/wild_chair/input.jpg",
+        "frames": 75,
+        "fps": 29.605263157894736,
+        "width": 406,
+        "height": 720
+      },
+      {
+        "method": "n7",
+        "label": "TripleFlow",
+        "file": "videos/showcase/wild_chair/tripleflow.mp4",
+        "poster": "videos/showcase/wild_chair/tripleflow.jpg",
+        "frames": 75,
+        "fps": 29.605263157894736,
+        "width": 406,
+        "height": 720
+      }
+    ]
+  },
+  "wild_red_chair": {
+    "id": "wild_red_chair",
+    "name": "Wild \u00b7 red chair",
+    "detail": "Captured video \u00b7 object removal",
+    "title": "Remove the red chair.",
+    "group": "showcase",
+    "videos": [
+      {
+        "method": "source",
+        "label": "Input",
+        "file": "videos/showcase/wild_red_chair/input.mp4",
+        "poster": "videos/showcase/wild_red_chair/input.jpg",
+        "frames": 51,
+        "fps": 29.423076923076923,
+        "width": 406,
+        "height": 720
+      },
+      {
+        "method": "n7",
+        "label": "TripleFlow",
+        "file": "videos/showcase/wild_red_chair/tripleflow.mp4",
+        "poster": "videos/showcase/wild_red_chair/tripleflow.jpg",
+        "frames": 51,
+        "fps": 29.423076923076923,
+        "width": 406,
+        "height": 720
       }
     ]
   }

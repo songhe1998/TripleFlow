@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TripleFlow — Training-Free Video Object Removal</title>
+  <meta name="description" content="TripleFlow coordinates source, residual editing, and synthesis flows for training-free video object removal. Explore synchronized video results, comparisons, and our method.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="TripleFlow: Training-Free Video Object Removal">
+  <meta property="og:description" content="Bridging Residual Editing and Native Generation. Research paper, method, and video results.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://songhe1998.github.io/TripleFlow/">
+  <link rel="canonical" href="https://songhe1998.github.io/TripleFlow/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="assets/data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#results">Skip to video results</a>
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="wordmark" href="#top"><img src="assets/favicon.svg" width="26" height="26" alt="">TripleFlow</a>
+      <nav aria-label="Main navigation">
+        <a href="#results">Results</a><a href="#method">Method</a><a href="#comparisons">Comparisons</a><a href="#citation">Citation</a>
+      </nav>
+      <a class="nav-paper" href="https://arxiv.org/abs/2609.39157">Read the paper</a>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero container" aria-labelledby="paper-title">
+      <p class="eyebrow">Video object removal · Training-free · Inversion-free</p>
+      <h1 id="paper-title"><span class="project-name">TripleFlow</span><span class="paper-title">Training-Free Video Object Removal</span><span class="paper-subtitle">by Bridging Residual Editing and Native Generation</span></h1>
+      <div class="authors">
+        <span>Songhe Wang<sup>1,*</sup></span><span>Lifu Wei<sup>2,*</sup></span><span>Shuolin Xu<sup>3</sup></span><span>Charles A. Kamhoua<sup>4</sup></span><span>David Miller<sup>5</sup></span>
+      </div>
+      <div class="affiliations">
+        <span><sup>1</sup>CSE, Penn State University</span><span><sup>2</sup>The University of British Columbia</span><span><sup>3</sup>Bournemouth University</span><span><sup>4</sup>DEVCOM Army Research Laboratory</span><span><sup>5</sup>EE, Penn State University</span>
+      </div>
+      <p class="equal">* Equal contribution</p>
+      <div class="paper-links"><a class="button primary" href="https://arxiv.org/pdf/2609.39157">Paper PDF</a><a class="button" href="https://arxiv.org/abs/2609.39157">arXiv:2609.39157</a><a class="button" href="#citation">BibTeX</a></div>
+      <p class="hero-summary">Remove the object and its visual effects.<br><strong>Reconstruct the scene behind it.</strong></p>
+      <div class="hero-demo" id="hero-demo"></div>
+      <div class="scene-tabs" id="hero-tabs" role="group" aria-label="Choose a featured scene"></div>
+      <noscript><p>Enable JavaScript for synchronized video playback. <a href="videos/showcase/01_me12_kayak_canal/input.mp4">Watch the canal input</a> and <a href="videos/showcase/01_me12_kayak_canal/tripleflow.mp4">TripleFlow result</a>.</p></noscript>
+    </section>
+
+    <section class="section abstract-section" id="abstract" aria-labelledby="abstract-title">
+      <div class="reading-width">
+        <p class="section-kicker">The idea</p><h2 id="abstract-title">Erasing is only half the problem.</h2>
+        <p class="lead">Removing an object exposes the background it once concealed. TripleFlow couples localized erasure with persistent background synthesis, while anchoring unedited regions to the source video.</p>
+        <details class="abstract-details"><summary>Read the abstract</summary><p id="abstract-text"></p></details>
+      </div>
+    </section>
+
+    <section class="section container" id="results" aria-labelledby="results-title">
+      <div class="section-heading"><div><p class="section-kicker">See it in motion</p><h2 id="results-title">One pipeline. Different challenges.</h2></div><p>Camera motion, occluded backgrounds, and object-associated effects. Play each input and result together.</p></div>
+      <div class="gallery-grid" id="gallery"></div>
+      <p class="section-note">Selected qualitative examples from captured videos, public benchmarks, and Wan-generated scenes. Source and result are shown at matching times; clips are not used here as a benchmark average.</p>
+    </section>
+
+    <section class="section method-section" id="method" aria-labelledby="method-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="section-kicker">How it works</p><h2 id="method-title">Three flows. One frozen backbone.</h2></div><p>A generated clean first frame guides appearance. Coupled trajectories coordinate preservation, removal, and completion throughout inference.</p></div>
+        <figure class="pipeline"><a href="assets/pipeline.png" target="_blank" rel="noopener" aria-label="Open the full-resolution TripleFlow pipeline diagram"><img src="assets/pipeline.png" alt="TripleFlow pipeline: source flow and residual edit flow share a frozen Wan model. Target velocity is reused by a persistent synthesis flow; the states are blended, projected, and anchored for the next step." loading="lazy" width="2000" height="1100"></a><figcaption>The synthesis state reuses the target velocity already evaluated for residual editing, requiring no additional backbone evaluation.</figcaption></figure>
+        <div class="flow-explanations"><article><span class="flow-number">01</span><h3>Source flow</h3><p>An analytic path provides a source-aligned reference without numerical inversion.</p></article><article><span class="flow-number">02</span><h3>Residual edit flow</h3><p>Localized source–target velocity differences suppress the masked foreground.</p></article><article><span class="flow-number">03</span><h3>Synthesis flow</h3><p>A persistent state accumulates target updates and feeds background content back into the edit.</p></article></div>
+      </div>
+    </section>
+
+    <section class="section container" id="comparisons" aria-labelledby="comparisons-title">
+      <div class="section-heading"><div><p class="section-kicker">Side by side</p><h2 id="comparisons-title">Look beyond the removed object.</h2></div><p>Compare background details, scene geometry, and temporal consistency across five methods.</p></div>
+      <div class="scene-tabs comparison-tabs" id="comparison-tabs" role="group" aria-label="Choose a comparison scene"></div>
+      <div id="comparison-demo"></div>
+      <details class="comparison-notes"><summary>About these comparisons</summary><p>These are selected synthetic showcase scenes, not aggregate benchmark results. All methods are displayed with matching frame timing. ContextFlow uses the stored Wan 5B adaptation with its independently generated MagicQuill first frames. OmniEraser uses its stored 512 × 512 framewise results, restored to the source dimensions. Full experimental settings and benchmark evaluations are in the paper.</p></details>
+    </section>
+
+    <section class="section citation-section" id="citation" aria-labelledby="citation-title">
+      <div class="reading-width"><div class="citation-heading"><div><p class="section-kicker">Reference</p><h2 id="citation-title">Cite TripleFlow</h2></div><button class="button copy-button" type="button" id="copy-citation">Copy BibTeX</button></div>
+        <pre><code id="bibtex">@article{wang2026tripleflow,
+  title={TripleFlow: Training-Free Video Object Removal by Bridging Residual Editing and Native Generation},
+  author={Wang, Songhe and Wei, Lifu and Xu, Shuolin and Kamhoua, Charles A. and Miller, David},
+  journal={arXiv preprint arXiv:2609.39157},
+  year={2026},
+  doi={10.48550/arXiv.2609.39157},
+  url={https://arxiv.org/abs/2609.39157}
+}</code></pre><p id="copy-status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+  <footer class="container"><a class="wordmark" href="#top">TripleFlow</a><p>Training-free video object removal · 2026</p><a href="https://github.com/songhe1998/TripleFlow">Website source</a></footer>
+</body>
+</html>

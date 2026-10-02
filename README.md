@@ -21,7 +21,7 @@ Open http://localhost:8000/. There are no build dependencies, third-party script
 
 - `index.html`: paper details, method explanation, and citation.
 - `style.css`: responsive layout and visual styling.
-- `app.js`: scene selection and synchronized playback, seeking, and restart.
+- `app.js`: two large video stages (wild and generated), thumbnail selection, synchronized playback, seeking, and restart.
 - `assets/data.js`: public video metadata and relative asset paths.
 - `assets/abstract.txt`: the paper abstract.
 - `assets/pipeline.png`: the paper's pipeline figure.

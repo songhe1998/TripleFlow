@@ -51,10 +51,24 @@ function renderSelector(tabsId,demoId,ids,comparison=false){
   ids.forEach((id,i)=>{const b=document.createElement('button');b.type='button';b.dataset.id=id;b.textContent=CASES[id].name;b.setAttribute('aria-pressed',String(i===0));b.addEventListener('click',()=>select(id,!reduceMotion));tabs.append(b);});
   select(ids[0],!comparison&&!reduceMotion);
 }
-renderSelector('hero-tabs','hero-demo',['me12_kayak_canal','wild_mirror_hard','wild_kitchen','me07_cactus_steps']);
-const galleryIds=["wild_mirror_hard", "wild_kitchen", "wild_motion", "wild_chair", "wild_red_chair", "wild_mirror_easy", "me07_cactus_steps", "me17_cone_stone", "me06_suitcase_lobby", "me11_sculpture_gallery", "me01_bicycle_plaza", "p09_gallery"];
-document.getElementById('gallery').innerHTML=galleryIds.map(id=>{const c=CASES[id];return `<article class="result-card ${c.videos[0].height>c.videos[0].width?'portrait':''}"><div class="card-heading"><h3>${escapeHTML(c.name)}</h3><p>${escapeHTML(c.detail)}</p></div>${playerHTML(c)}<p class="instruction">${escapeHTML(c.title)}</p></article>`;}).join('');
-document.querySelectorAll('#gallery .player').forEach(root=>new SyncedPlayer(root));
+renderSelector('hero-tabs','hero-demo',['me12_kayak_canal','wild_mirror_hard','me07_cactus_steps','me17_cone_stone']);
+function renderCollection(kind, label, subtitle, ids) {
+  const section=document.createElement('section');section.className='collection';
+  section.innerHTML=`<div class="collection-heading"><div><p class="collection-index">${kind==='wild'?'01':'02'} / VIDEO RESULTS</p><h3>${label}</h3></div><p>${subtitle}</p></div><div class="collection-stage"></div><div class="filmstrip" role="group" aria-label="${label} scenes"></div>`;
+  document.getElementById('gallery').append(section);
+  const stage=section.querySelector('.collection-stage'),strip=section.querySelector('.filmstrip');let player;
+  function select(id,autoplay=false){
+    if(player)player.destroy();const c=CASES[id],v=c.videos[0];
+    stage.classList.toggle('is-portrait',v.height>v.width);
+    stage.innerHTML=`<div class="stage-heading"><h4>${escapeHTML(c.title)}</h4><span>${String(ids.indexOf(id)+1).padStart(2,'0')} / ${String(ids.length).padStart(2,'0')}</span></div>${playerHTML(c)}`;
+    const root=stage.querySelector('.player');if(autoplay&&!reduceMotion)root.dataset.autoplay='true';player=new SyncedPlayer(root);
+    strip.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.id===id)));
+  }
+  ids.forEach(id=>{const c=CASES[id],b=document.createElement('button');b.type='button';b.dataset.id=id;b.setAttribute('aria-label',`Show ${c.name}`);b.innerHTML=`<span class="thumb"><img src="${escapeHTML(c.videos[0].poster)}" alt="" loading="lazy"></span><span class="thumb-name">${escapeHTML(c.name.replace('Wild · ',''))}</span>`;b.addEventListener('click',()=>select(id,true));strip.append(b);});
+  select(ids[0]);
+}
+renderCollection('wild','In the wild','Captured videos', ['wild_mirror_hard','wild_kitchen','wild_motion','wild_chair','wild_red_chair','wild_mirror_easy']);
+renderCollection('generated','Moving cameras. Changing scenes.','Generated videos', ['me12_kayak_canal','me07_cactus_steps','me17_cone_stone','me06_suitcase_lobby','me11_sculpture_gallery','me01_bicycle_plaza','p09_gallery']);
 renderSelector('comparison-tabs','comparison-demo',['t02_bookcase','t06_forklift_shelves','t01_carved_door','t09_mirror_entryway'],true);
 fetch('assets/abstract.txt').then(r=>{if(!r.ok)throw new Error();return r.text();}).then(t=>document.getElementById('abstract-text').textContent=t).catch(()=>{document.getElementById('abstract-text').innerHTML='Read the full abstract <a href="https://arxiv.org/abs/2609.39157">on arXiv</a>.';});
 document.getElementById('copy-citation').addEventListener('click',async()=>{const text=document.getElementById('bibtex').textContent,status=document.getElementById('copy-status');try{await navigator.clipboard.writeText(text);status.textContent='BibTeX copied.';}catch{const selection=window.getSelection(),range=document.createRange();range.selectNodeContents(document.getElementById('bibtex'));selection.removeAllRanges();selection.addRange(range);status.textContent='Citation selected. Press Ctrl+C or ⌘C to copy.';}});
